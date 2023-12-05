@@ -1,0 +1,29 @@
+.picture-list {
+  display: block;
+  padding: 0;
+  margin: 0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
+  span {
+    font-size: 12px;
+  }
+
+  &__image {
+    width: 15px;
+    margin-right: 20px;
+  }
+
+  &__actions {
+    &-icon {
+      width: 15px;
+      margin-left: 10px;
+    }
+  }
+
+}

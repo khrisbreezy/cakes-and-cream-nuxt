@@ -1,0 +1,414 @@
+.color-blue {
+  color: $blue;
+}
+
+
+div {
+  &.fm {
+
+    .container {
+      display: block;
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    /* Hide the browser's default radio button */
+    .container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    /* Create a custom radio button */
+    .checkmark {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 20px;
+      width: 20px;
+      background-color: #eee;
+      border-radius: 50%;
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input~.checkmark {
+      background-color: #ccc;
+    }
+
+    /* When the radio button is checked, add a blue background */
+    .container input:checked~.checkmark {
+      background-color: #E0E0E0;
+    }
+
+    /* Create the indicator (the dot/circle - hidden when not checked) */
+    .checkmark:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked~.checkmark:after {
+      display: block;
+    }
+
+    /* Style the indicator (dot/circle) */
+    .container .checkmark:after {
+      top: 5px;
+      left: 5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #2F80ED;
+    }
+  }
+}
+
+
+
+/* ACCORDION */
+.accordion,
+.dash-accordion {
+  padding: 10px 0;
+
+  .accordion-head {
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .accordion-text {
+    color: #000;
+    padding: 10px 15px 20px;
+
+  }
+
+  .accord-btn.collapsed img {
+    transform: rotate(0deg);
+  }
+
+  .accord-btn {
+    width: 100%;
+    display: flex;
+    background-color: transparent !important;
+    border: none !important;
+    align-items: center;
+    text-align: left;
+
+    .accordion-p {
+      font-size: 16px;
+      color: #000;
+      font-weight: $bold;
+      margin: auto 0;
+    }
+  }
+
+  .acc-arr {
+    position: relative;
+    margin-right: 35px;
+    border-radius: 50px;
+    width: 35px;
+    height: 35px;
+    background: $blue;
+
+    img {
+      position: absolute;
+      top: 41%;
+      left: 32%;
+    }
+  }
+
+  .accord-btn img {
+    transform: rotate(180deg);
+  }
+
+  // All Dropdown arrow and text color styling
+  .pending-payment {
+    background: $red;
+  }
+  .pending-text {
+    color: $red;
+  }
+  .processing {
+    background: $blue;
+  }
+  .balance-outstanding {
+    background: $orange;
+  }
+  .balance-text {
+    color: $orange;
+  }
+  .paid {
+    background: $green;
+  }
+  .paid-text {
+    color: $green;
+  }
+
+
+  /* -- payment status indicatorn --- */
+  .status-color {
+    font-size: 12px;
+    padding: 0 8px;
+    border-radius: 47px;
+
+    &.green {
+      color: $green;
+      background: #CDFFCD;
+      border: 1px solid $green;
+    }
+    &.orange {
+      color: $orange;
+      background: #FFECCC;
+      border: 1px solid $orange;
+    }
+
+    &.red {
+      color: $red;
+      background: #FFE0E0;
+      border: 1px solid $red;
+    }
+  }
+
+  .tab-arrow [aria-expanded="false"] {
+    transform: rotate(190deg);
+  }
+
+}
+
+
+
+.orderid-text {
+  color: $deep-black;
+  font-size: 16px;
+  font-weight: $semibold;
+}
+
+
+.top-accordi {
+  position: relative;
+}
+
+.bottom-accordi {
+  position: absolute;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+}
+
+// Order Timeline 
+.order-timeline {
+  position: relative;
+  width: 100%;
+
+  // Vertical line 
+  &::after {
+    content: '';
+    position: absolute;
+    width: 2.5px;
+    background-color: $dem-grey;
+    top: 0;
+    left: 50px;
+    height: 100%;
+  }
+
+  .order-id {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      font-size: 16px !important;
+    }
+
+    img {
+      cursor: pointer;
+    }
+  }
+
+  .order-type {
+    margin: 5px 0 17px;
+  }
+
+  //Order interval time 
+  .order-time {
+    font-size: 16px;
+    line-height: 17px;
+    color: $deep-black;
+
+    p:last-child {
+      color: #BCC1CD;
+    }
+  }
+}
+
+// Order details
+.order-details {
+  width: 100%;
+  background-color: #F6F6F5;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 0 15px 20px;
+  cursor: pointer;
+
+  p {
+    font-size: 12px;
+    margin: auto 0;
+    color: $deep-black;
+  }
+
+  .order-name {
+    display: flex;
+    margin-top: 5px;
+
+    img {
+      width: 22px;
+      height: 22px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+  }
+}
+
+// Hover state 
+.order-details:hover {
+  background-color: $blue;
+
+  p {
+    color: #fff;
+  }
+
+  .order-i {
+    filter: brightness(0) invert(1);
+  }
+}
+
+
+  p.error {
+    color: red;
+    font-size: 11px;
+  }
+
+  p.error-all {
+    color: red;
+    margin-bottom: 0;
+  }
+
+  // forms background  shows on Desktop view  and removed on mobile view
+.desk-layout {
+  background: #fff;
+  padding: 20px 50px 40px;
+  border-radius: 5px;
+  // box-shadow: 0 0 4px #ccc;
+
+  @media (max-width: $mobile_width) {
+    background: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+  }
+}
+
+/* Top Navbar profile section */
+.dash-dropdown {
+  .drop-icon {
+    width: 15px;
+    margin: auto 0;
+  }
+
+  .avatar {
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50px;
+  }
+
+  .dash-dropdown-toggle {
+    background: none !important;
+    border: none;
+
+    &::after {
+      display: none !important;
+    }
+  }
+
+  .dropdown-menu {
+    // top: 65px !important;
+    width: 100%;
+    border: none;
+    box-shadow: 1px 1px 3px #999;
+
+    .dropdown-item {
+      text-decoration: none;
+      padding: 6px 12px;
+
+      &:hover {}
+    }
+  }
+}
+
+/* Desktop view content area */
+.content-wrapper {
+  margin-left: 300px;
+
+  @media (max-width: $desktop_width) {
+    margin-left: 250px;
+  }
+  @media (max-width: $mobile_width) {
+    margin-left: 0;
+  }
+
+}
+
+/*  Table pagination  */
+.table-pagination {
+  display: flex;
+  align-items: center !important;
+  justify-content: flex-end;
+  padding: 10px 0;
+
+  .form-group {
+    padding: 0 10px;
+    margin: 0 45px 0 0px;
+
+    select {
+      border-bottom: none;
+      font-size: 14px;
+      padding: 0 10px;
+    }
+  }
+
+  .pagi-label {
+    font-weight: 600;
+    margin: auto 0;
+  }
+
+  .pagi-nav {
+    margin-left: 30px;
+
+    img {
+      cursor: pointer;
+      padding: 0 15px;
+    }
+  }
+}
+
+
+// Booking-options Select type text
+.type-1 {
+  @media only screen and (min-width: $tablet_width) {
+    font-size: 17px;
+  }
+}
+
+// For loader on desktop view
+.loading-desktop-view {
+  @media only screen and (min-width: $tablet_width) {
+    margin-left: 330px;
+  }
+}
+

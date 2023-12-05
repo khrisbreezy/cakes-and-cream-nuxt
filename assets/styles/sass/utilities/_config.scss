@@ -1,0 +1,52 @@
+@mixin do-font-face($name, $file-name, $url, $type, $weight, $style){
+  @font-face {
+    font-family: $name;
+    //src: url(#{$url + $file-name}.eot);
+    //src: url(#{$url + $file-name}.eot?#iefix) format('embedded-opentype');
+    @if $type == "otf"{
+      src: url(#{$url + $file-name}.otf) format('opentype');
+    }
+    @if $type == "ttf"{
+      src: url(#{$url + $file-name}.ttf) format('truetype');
+    }
+    @if $type == "woff"{
+      src: url(#{$url + $file-name}.woff);
+    }
+    @if $type == "woff2"{
+      src: url(#{$url + $file-name}.woff2);
+    }
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@include do-font-face('SFProText', 'sfpro-text-regular', '~assets/fonts/', 'ttf', normal, normal);
+@include do-font-face('SFProText', 'sfpro-text-medium', '~assets/fonts/', 'ttf', bold, normal);
+@include do-font-face('Qumpellka', 'qumpellka', '~assets/fonts/', 'otf', normal, normal);
+
+$sfpro          : 'SFProText', sans-serif;
+$qumpellka      : 'Qumpellka', cursive;
+
+$ffh            : $qumpellka;
+$ffb            : $sfpro;
+
+$light          : 300;
+$normal         : normal;
+$semibold       : 500;
+$bold           : bold;
+$black-weight   : 900;
+
+
+// Colors
+$blue : #2586EF;
+$deep-blue : #0059BA;
+$light-grey : #90A4AE;
+$dem-grey : #FAF9F9;
+$grey : #5e6b71;
+$black : #555555;
+$deep-black : #333333;
+
+
+$green : #5FC068;
+$red : #EB5757;
+$orange : #F2994A;

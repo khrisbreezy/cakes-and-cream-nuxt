@@ -1,0 +1,194 @@
+nav{
+
+  &.navbar {
+    background-color: $blue;
+    margin-bottom: 20px;
+  
+    .navbar-brand {
+      padding: 0;
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+  
+      img{
+        height: 50px;
+        border-radius: 50%;
+      }
+    }
+  
+    .navbar-toggler{
+      img{
+        height: 28px;
+      }
+    }
+  
+    .navbar-nav{
+      a{
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+      }
+    }
+  
+    .offcanvas-collapse {
+      position: fixed;
+      top: 60px;
+      bottom: 33px;
+      z-index: 10000;
+      width: 100%;
+      padding: 30px;
+      overflow-y: auto;
+      background-color: $blue;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      transition: all .3s ease-in-out;
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+    }
+  
+    .offcanvas-collapse.open {
+      transform: translateX(-1rem); /* Account for horizontal padding on navbar */
+    }
+  }
+  
+   /* Desktop view navigation */
+   &.desktop-nav {
+    background: #fff;
+    padding: 15px 40px 15px 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 0 2.6px;
+    margin-left: 298px;
+  }
+}
+
+.sidebar {
+  width: 300px !important;
+  background-color: #fff !important;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  display: block;
+  overflow: hidden;
+  overflow-y: auto;
+  padding-right: 0;
+  padding-left: 0;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 0 2.6px;
+
+  @media (max-width: $desktop_width) {
+    width: 250px !important;
+  }
+
+  /*  scrollbar dsiplay  => none  */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  ul {
+    list-style: none;
+    width: 100%;
+  }
+
+  /* sidebar logo postioning */
+  .brand-logo {
+    width: 50%;
+    margin: 35px auto;
+  }
+
+  .main-txt {
+    color: $light-grey;
+    padding-top: 40px;
+    font-weight: 900;
+  }
+
+
+  /* sidebar items styling */
+  .dash-item {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    color: $grey;
+    background-color: #fff;
+    padding: 13px 20px;
+    margin-top: 5px;
+    text-decoration: none;
+
+    .dash-icon {
+      width: 40px;
+      filter: invert(54%) sepia(35%) saturate(6740%) hue-rotate(193deg) brightness(93%) contrast(101%);
+    }
+
+    /*  Rotate menu icon dropdown arrow */
+    .dash-arrow {
+      margin-left: auto;
+      filter: invert(54%) sepia(35%) saturate(6740%) hue-rotate(193deg) brightness(93%) contrast(101%);
+    }
+    &[aria-expanded="false"]>.dash-arrow {
+      transform: rotate(-90deg);
+    }
+
+    /* sidebar items (on-focus) styling*/
+    &:focus {
+      border-radius: 8px;
+      background-color: $blue;
+      transition: all .5s;
+      color: #fff;
+
+      .dash-icon,
+      .dash-arrow {
+        filter: brightness(0) invert(1);
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 55px;
+        left: 0;
+        background: $blue;
+        border-radius: 0 8px 8px 0;
+      }
+    }
+  }
+
+  .dash-item-active {
+
+      border-radius: 8px;
+      background-color: $blue;
+      transition: all .5s;
+      color: #fff;
+
+      .dash-icon,
+      .dash-arrow {
+        filter: brightness(0) invert(1);
+      }
+
+      &::before {
+        position: absolute;
+        content: '';
+        width: 10px;
+        height: 55px;
+        left: 0;
+        background: $blue;
+        border-radius: 0 8px 8px 0;
+      }
+  }
+
+  .sidebar-footer {
+    margin-top: 62px;
+  }
+
+  // Dashboard navigation submenu styling
+  .submenu {
+    list-style: none;
+
+    li {
+      margin-left: 25px;
+      padding: 10px 0 !important;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+
+}
